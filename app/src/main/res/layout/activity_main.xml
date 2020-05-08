@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer">
+
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/type"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/type" />
+                <ImageButton
+                    android:id="@+id/draw_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:src="@mipmap/ic_pen" />
+                <ImageButton
+                    android:id="@+id/color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:contentDescription="@string/color"
+                    android:src="@drawable/opacity" />
+
+
+                <ImageButton
+                    android:id="@+id/erase_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:src="@mipmap/ic_eraser" />
+
+                <ImageButton
+                    android:id="@+id/reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_clear"/>
+                <ImageButton
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:src="@mipmap/ic_save"/>
+            </LinearLayout>
+            <com.example.doodling.View.DrawingView
+                android:id="@+id/drawingView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </com.example.doodling.View.DrawingView>
+        </LinearLayout>
+    </FrameLayout>
+    <RelativeLayout
+        android:id="@+id/left_view"
+        android:layout_width="200dp"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        >
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="搜索"
+                android:textSize="16sp"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textColor="@color/black" />
+        </android.support.design.widget.AppBarLayout>
+
+        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:id="@+id/twinklingRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tr_enable_loadmore="false"
+            app:tr_enable_refresh="false"
+            app:tr_bottom_height="80dp"
+            app:tr_head_height="80dp"
+            android:layout_marginTop="50dp">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/search"
+                android:id="@+id/listView"/>
+        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+    </RelativeLayout>
+</android.support.v4.widget.DrawerLayout>

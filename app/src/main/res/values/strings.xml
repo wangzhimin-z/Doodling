@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Doodling</string>
+    <string name="color">颜色</string>
+    <string name="size">画笔大小</string>
+    <string name="type">形状</string>
+    <string name="text_rest">重新绘制</string>
+    <string name="Eraser">橡皮擦</string>
+    <string name="paint">Paint</string>
+</resources>
